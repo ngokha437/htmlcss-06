@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,8 +26,46 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- Scripts -->
+    <script src="./assets/js/scripts.js"></script>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="header">
+        <!-- Logo -->
+        <img src="./assets/icons/logo.svg" alt="Task" class="logo" />
+
+        <!-- Navbar -->
+        <nav id="navbar" class="navbar hide">
+          <ul class="navbar__list">
+            <li class="navbar__item">
+              <a href="/" class="navbar__link navbar__link--active">Home</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#!" class="navbar__link">Products</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#!" class="navbar__link">Guidelines</a>
+            </li>
+            <li class="navbar__item">
+              <a href="#!" class="navbar__link">Review</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+
+        <!-- Actions -->
+        <div class="top-action">
+          <button class="btn btn--outline btn--small">Sign In</button>
+          <button
+            class="top-action__more d-none d-md-block js-toggle"
+            toggle-target="#navbar"
+          >
+            <img src="./assets/icons/more.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

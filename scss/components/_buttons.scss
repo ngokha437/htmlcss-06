@@ -1,0 +1,38 @@
+.btn {
+  height: 55px;
+  border-radius: 8px;
+  padding: 0 40px;
+
+  background: #282C30;
+  color: #F9F9F9;
+
+  font-size: 1.6rem;
+
+  +.btn {
+    margin-left: 20px;
+  }
+
+  &--small {
+    height: 40px;
+    padding: 0 20px;
+  }
+
+  &--primary {
+    background: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+    color: #F9F9F9;
+  }
+
+  &--outline {
+    color: #83E868;
+    border: 1px solid #272633;
+  }
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    &--outline {
+      color: transparent;
+      background: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+}
