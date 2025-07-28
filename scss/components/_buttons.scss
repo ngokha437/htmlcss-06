@@ -25,14 +25,14 @@
   &--outline {
     color: #83E868;
     border: 1px solid #272633;
-  }
 
-  @supports (background-clip: text) or (-webkit-background-clip: text) {
-    &--outline {
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
       color: transparent;
       background: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
       background-clip: text;
       -webkit-background-clip: text;
     }
   }
+
+  
 }
