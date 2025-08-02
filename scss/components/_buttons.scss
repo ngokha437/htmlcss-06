@@ -18,7 +18,7 @@
   }
 
   &--primary {
-    background: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+    background: var(--linear-primary-bg);
     color: #F9F9F9;
   }
 
@@ -28,11 +28,9 @@
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
       color: transparent;
-      background: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+      background: var(--linear-primary-bg);
       background-clip: text;
       -webkit-background-clip: text;
     }
   }
-
-  
 }

@@ -35,13 +35,15 @@
     <div class="container">
       <div class="header">
         <!-- Logo -->
-        <img src="./assets/icons/logo.svg" alt="Task" class="logo" />
+        <a href="./">
+          <img src="./assets/icons/logo.svg" alt="Task" class="logo" />
+        </a>
 
         <!-- Navbar -->
         <nav id="navbar" class="navbar hide">
           <ul class="navbar__list">
             <li class="navbar__item">
-              <a href="/" class="navbar__link navbar__link--active">Home</a>
+              <a href="./" class="navbar__link navbar__link--active">Home</a>
             </li>
             <li class="navbar__item">
               <a href="#!" class="navbar__link">Products</a>
@@ -218,8 +220,8 @@
                       </figcaption>
                       <div class="dashboard-media__wrap">
                         <video
+                          id="media-video"
                           class="dashboard-media__video"
-                          controls
                           playsinline
                           poster="./assets/img/hero.jpg"
                         >
@@ -229,9 +231,119 @@
                           />
                           Your browser does not support the video tag.
                         </video>
-                        <button class="dashboard-media__play">
-                          <img src="./assets/icons/play.svg" alt="" />
-                        </button>
+
+                        <div class="dashboard-media__center play">
+                          <button
+                            id="play-media-btn"
+                            class="dashboard-media__play"
+                          >
+                            <img
+                              src="./assets/icons/play.svg"
+                              alt=""
+                              class="dashboard-media__icon dashboard-media__icon--play"
+                            />
+                          </button>
+                          <button
+                            id="pause-media-btn"
+                            class="dashboard-media__pause"
+                          >
+                            <img
+                              src="./assets/icons/pause.svg"
+                              alt=""
+                              class="dashboard-media__icon dashboard-media__icon--pause"
+                            />
+                          </button>
+                        </div>
+
+                        <div class="dashboard-media__footer">
+                          <!-- Progress bar -->
+                          <div class="dashboard-media__duration">
+                            <input
+                              type="range"
+                              id="media-progress"
+                              class="dashboard-media__duration--progress"
+                              min="0"
+                              max="0"
+                              value="0"
+                              step="1"
+                            />
+                            <div
+                              id="media-played"
+                              class="dashboard-media__duration--played"
+                            ></div>
+                            <div
+                              id="media-buffered"
+                              class="dashboard-media__duration--buffered"
+                            ></div>
+                          </div>
+
+                          <div class="dashboard-media__bottom">
+                            <!-- Time -->
+                            <div class="dashboard-media__time">
+                              <span
+                                id="current-time"
+                                class="dashboard-media__time--current"
+                                >0:00</span
+                              >
+                              <span>/</span>
+                              <span
+                                id="total-time"
+                                class="dashboard-media__time--total"
+                                >0:00</span
+                              >
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="dashboard-media__action">
+                              <!-- Sound -->
+                              <div class="dashboard-media__sound sound-on">
+                                <button
+                                  id="sound-on-media-btn"
+                                  class="dashboard-media__btn dashboard-media__sound-on"
+                                >
+                                  <img
+                                    src="./assets/icons/speaker.svg"
+                                    alt=""
+                                  />
+                                </button>
+                                <button
+                                  id="sound-off-media-btn"
+                                  class="dashboard-media__btn dashboard-media__sound-off"
+                                >
+                                  <img
+                                    src="./assets/icons/speaker-x.svg"
+                                    alt=""
+                                  />
+                                </button>
+                                <div class="dashboard-media__sound-line">
+                                  <input
+                                    type="range"
+                                    id="media-sound"
+                                    class="dashboard-media__sound-line--slider"
+                                    min="0"
+                                    max="1"
+                                    value="1"
+                                    step="0.01"
+                                  />
+                                  <div
+                                    id="media-sound-value"
+                                    class="dashboard-media__sound-line--value"
+                                  ></div>
+                                </div>
+                              </div>
+
+                              <!-- Loop -->
+                              <div class="dashboard-media__loop">
+                                <button
+                                  id="loop-media-btn"
+                                  class="dashboard-media__btn"
+                                >
+                                  <img src="./assets/icons/loop.svg" alt="" />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </figure>
                   </div>
@@ -299,5 +411,7 @@
         </div>
       </section>
     </div>
+
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
