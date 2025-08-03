@@ -35,10 +35,6 @@ function Media() {
     mediaCenter.classList.remove("pause");
   });
 
-  video.addEventListener('mouseover', () => {
-    console.log('mouse over');
-  })
-
   videoProgress.addEventListener("input", (event) => {
     video.currentTime = event.target.value;
   });

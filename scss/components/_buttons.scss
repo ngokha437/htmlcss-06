@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 .btn {
   height: 55px;
   border-radius: 8px;
@@ -7,6 +9,10 @@
   color: #F9F9F9;
 
   font-size: 1.6rem;
+
+  @include abstracts.screen(sm) {
+    font-size: 1.2rem;
+  }
 
   +.btn {
     margin-left: 20px;

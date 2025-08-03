@@ -1,13 +1,68 @@
-html {
+@use '../abstracts';
+
+:root {
   --font-size-media: 1rem;
+  --sound-line-width: 2px;
+  --sound-line-height: 50px;
+  --sound-btn-icon-size: 15px;
+  --sound-btn-padding: 5px;
+
+  @include abstracts.screen(xl) {
+    --font-size-media: 0.8rem;
+    --sound-line-height: 40px;
+    --sound-btn-icon-size: 12px;
+  }
+
+  @include abstracts.screen(lg) {
+    --font-size-media: 0.6rem;
+    --sound-line-height: 30px;
+    --sound-btn-icon-size: 10px;
+    --sound-btn-padding: 2px;
+  }
+
+  @include abstracts.screen(md) {
+    --font-size-media: 0.4rem;
+    --sound-btn-icon-size: 8px;
+  }
+
+  @include abstracts.screen(sm) {
+    --font-size-media: 0.3rem;
+    --sound-btn-icon-size: 6px;
+  }
 }
 
 .hero {
   padding: 90px 0 70px;
 
+  @include abstracts.screen(lg) {
+    padding: 70px 0 70px;
+  }
+
+  @include abstracts.screen(md) {
+    padding: 40px 0 70px;
+  }
+
+  @include abstracts.screen(sm) {
+    padding: 0 0 70px;
+  }
+
   &__content {
     display: flex;
     padding: 0 28px;
+    gap: 20px;
+
+    @include abstracts.screen(xxl) {
+      padding: 0 20px;
+    }
+
+    @include abstracts.screen(lg) {
+      padding: 0;
+    }
+
+    @include abstracts.screen(md) {
+      padding: 0 10px;
+      position: relative;
+    }
   }
 
   &__main {
@@ -16,6 +71,14 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    @include abstracts.screen(xl) {
+      margin-top: 30px;
+    }
+
+    @include abstracts.screen(sm) {
+      padding: 0 10px;
+    }
   }
 
   &__heading {
@@ -24,6 +87,21 @@ html {
     font-weight: 700;
     line-height: 70px;
     color: var(--text-color-highlight);
+
+    @include abstracts.screen(lg) {
+      font-size: 4.4rem;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: 3.6rem;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    @include abstracts.screen(sm) {
+      font-size: 3rem;
+      font-weight: 600;
+    }
   }
 
   &__management {
@@ -31,6 +109,11 @@ html {
 
     position: relative;
     display: inline-flex;
+    line-height: normal;
+
+    @include abstracts.screen(sm) {
+      --decorator-width: 7px;
+    }
 
     &--text {
       position: relative;
@@ -94,14 +177,52 @@ html {
   &__desc {
     margin-top: 35px;
     width: 45%;
-    line-height: 162.5%
+    line-height: 162.5%;
+
+    @include abstracts.screen(xxl) {
+      width: 52%;
+    }
+
+    @include abstracts.screen(xl) {
+      width: 70%;
+    }
+
+    @include abstracts.screen(lg) {
+      width: 95%;
+    }
+
+    @include abstracts.screen(md) {
+      display: none;
+    }
   }
 
   &__cta {
     margin-top: 45px;
 
+    @include abstracts.screen(md) {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
     &--btn {
       width: 200px;
+
+      @include abstracts.screen(lg) {
+        width: 180px;
+        padding: 0 30px;
+      }
+
+      @include abstracts.screen(md) {
+        margin: 0 !important;
+      }
+
+      @include abstracts.screen(sm) {
+        width: 150px;
+        height: 40px;
+        padding: 0 20px;
+      }
     }
   }
 
@@ -109,7 +230,34 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 4em;
+    font-size: 1rem;
+
+    @include abstracts.screen(md) {
+      position: absolute;
+      font-size: 0.3rem;
+    }
+
+    @include abstracts.screen(sm) {
+      position: absolute;
+      font-size: 0.2rem;
+    }
+
+
+    &--1 {
+      @include abstracts.screen(md) {
+        flex-direction: row;
+        top: -20px;
+        left: 70px;
+      }
+    }
+
+    &--2 {
+      @include abstracts.screen(md) {
+        bottom: 50px;
+        right: 50px;
+      }
+    }
   }
 
   &__decorator {
@@ -119,23 +267,23 @@ html {
     box-shadow: 0 40px 30px 0 #313141 inset;
 
     &--large {
-      width: 120px;
-      height: 120px;
+      width: 12em;
+      height: 12em;
     }
 
     &--medium {
-      width: 40px;
-      height: 40px;
+      width: 4em;
+      height: 4em;
     }
 
     &--small {
-      width: 25px;
-      height: 25px;
+      width: 2.5em;
+      height: 2.5em;
     }
 
     &--extra-small {
-      width: 14px;
-      height: 14px;
+      width: 1.4em;
+      height: 1.4em;
     }
   }
 
@@ -143,6 +291,10 @@ html {
     display: flex;
     justify-content: center;
     padding: 110px 50px 150px 50px;
+
+    @include abstracts.screen(md) {
+      padding: 80px 50px 60px 50px;
+    }
   }
 }
 
@@ -163,6 +315,11 @@ html {
     &__icon {
       width: 10px;
       height: 10px;
+
+      @include abstracts.screen(md) {
+        width: 6px;
+        height: 6px;
+      }
     }
 
     &__title {
@@ -252,6 +409,12 @@ html {
       display: flex;
       align-items: center;
       gap: 7.5em;
+
+      &--user-icon {
+        @include abstracts.screen(md) {
+          height: 12px;
+        }
+      }
     }
 
     &__body {
@@ -352,6 +515,7 @@ html {
       padding-top: 100%;
       height: 100%;
       width: 100%;
+      overflow: hidden;
 
       &:hover .dashboard-media__footer {
         visibility: visible;
@@ -380,6 +544,14 @@ html {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include abstracts.screen(lg) {
+        height: 30px;
+      }
+
+      @include abstracts.screen(sm) {
+        height: 25px;
+      }
     }
 
     &__center.play>&__play {
@@ -407,6 +579,21 @@ html {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include abstracts.screen(lg) {
+        width: 25px;
+        height: 25px;
+      }
+
+      @include abstracts.screen(md) {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include abstracts.screen(sm) {
+        width: 18px;
+        height: 18px;
+      }
     }
 
     &__footer {
@@ -422,6 +609,14 @@ html {
       transition: visibility, opacity 0.2s;
       pointer-events: none;
       background: rgba($color: #000, $alpha: 0.2);
+
+      @include abstracts.screen(md) {
+        gap: 4px;
+      }
+
+      @include abstracts.screen(sm) {
+        gap: 0;
+      }
     }
 
     &__duration {
@@ -440,9 +635,9 @@ html {
       }
 
       &--progress {
-        position: relative;
+        position: absolute;
         z-index: 10;
-        top: -5px;
+        top: 0;
         width: 100%;
         cursor: pointer;
         background: transparent;
@@ -451,15 +646,21 @@ html {
         &::-webkit-slider-thumb {
           appearance: none;
           background: var(--linear-primary-bg);
-          height: 12px;
           width: 12px;
+          height: 12px;
           border-radius: 50%;
+
+          @include abstracts.screen(sm) {
+            width: 8px;
+            height: 8px;
+          }
         }
       }
 
       &--played {
         position: absolute;
         z-index: 1;
+        top: 0;
         background: var(--linear-primary-bg);
       }
 
@@ -473,7 +674,12 @@ html {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 4px;
       padding: 4px;
+
+      @include abstracts.screen(sm) {
+        padding: 2px 4px;
+      }
     }
 
     &__time {
@@ -482,22 +688,40 @@ html {
       align-items: center;
       gap: 4px;
       color: var(--text-color-highlight);
+
+      @include abstracts.screen(lg) {
+        font-size: 0.8rem;
+      }
+
+      @include abstracts.screen(md) {
+        font-size: 0.5rem;
+        gap: 3px;
+      }
+
+      @include abstracts.screen(sm) {
+        font-size: 0.4rem;
+        gap: 2px;
+      }
     }
 
     &__action {
       display: flex;
+      gap: 4px;
+
+      @include abstracts.screen(sm) {
+        gap: 0;
+      }
     }
 
     &__btn {
-      width: 25px;
-      height: 25px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: var(--sound-btn-padding);
 
       >img {
-        width: 15px;
-        height: 15px;
+        width: var(--sound-btn-icon-size);
+        height: var(--sound-btn-icon-size);
         filter: var(--media-icon-color);
       }
     }
@@ -512,18 +736,14 @@ html {
       }
 
       &-line {
-        --sound-line-width-container: 20px;
-        --sound-line-width: 2px;
-        --sound-line-height: 50px;
-
         position: absolute;
         display: flex;
         align-items: center;
         z-index: 20;
-        top: -20px;
-        right: 22px;
+        top: calc(-1 * (var(--sound-btn-padding) * 2 + var(--sound-btn-icon-size)));
+        right: calc(var(--sound-btn-padding) * 2 + var(--sound-btn-icon-size));
         width: var(--sound-line-height);
-        height: var(--sound-line-width-container);
+        height: calc(var(--sound-btn-padding) * 2 + var(--sound-btn-icon-size));
         rotate: 90deg;
         transform-origin: bottom right;
 
@@ -533,9 +753,7 @@ html {
           content: "";
           width: var(--sound-line-width);
           height: var(--sound-line-height);
-          top: 11px;
-          right: 0;
-          transform-origin: top right;
+          right: calc((var(--sound-line-height) / 2) - 1px);
           rotate: 90deg;
           background: #a6a6a6;
         }
@@ -544,10 +762,10 @@ html {
           position: absolute;
           z-index: 1;
           left: 0;
-          bottom: var(--sound-line-width-container);
+          bottom: calc(var(--sound-btn-padding) * 2 + var(--sound-btn-icon-size));
           writing-mode: vertical-rl;
           height: var(--sound-line-height);
-          width: var(--sound-line-width-container);
+          width: calc(var(--sound-btn-padding) * 2 + var(--sound-btn-icon-size));
           rotate: 90deg;
           transform-origin: bottom left;
           cursor: pointer;
@@ -579,16 +797,13 @@ html {
       }
     }
 
-    &__sound-on,
-    &__sound-off {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
     &__sound.sound-on>&__sound-off,
     &__sound.sound-off>&__sound-on {
       display: none;
+    }
+
+    &__loop {
+      @include abstracts.screen(sm) {}
     }
 
     &__loop.active img {
@@ -598,6 +813,16 @@ html {
     &__icon {
       width: 16px;
       height: 16px;
+
+      @include abstracts.screen(lg) {
+        width: 8px;
+        height: 8px;
+      }
+
+      @include abstracts.screen(md) {
+        width: 6px;
+        height: 6px;
+      }
 
       &--play {
         width: 100%;
