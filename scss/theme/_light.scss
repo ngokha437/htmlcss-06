@@ -1,9 +1,30 @@
 html {
-  --text-color: #858B93;
-  --text-color-highlight: #191919;
+  --body-bg: #eaeaea;
+  --text-color: #737373;
+  --text-color-highlight: #060606;
 
-  --sidebar-bg: #FFF;
+  --linear-primary-bg: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+  --linear-decorator-bg: linear-gradient(180deg, #ebebeb 6.06%, rgba(43, 43, 61, 0) 119.38%);
+  --decorator-shadow: 0 40px 30px 0 #c6c6c6 inset;
 
-  // #191919
-  --logo-color: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(6439%) hue-rotate(349deg) brightness(87%) contrast(80%);
+  --btn-bg: #d3d3d3;
+  --btn-outline-color: #d3d3d3;
+
+  // #060606
+  --logo-color: brightness(0) saturate(100%) invert(0%) sepia(19%) saturate(2864%) hue-rotate(100deg) brightness(96%) contrast(95%);
+  --icon-color: brightness(0) saturate(100%) invert(0%) sepia(19%) saturate(2864%) hue-rotate(100deg) brightness(96%) contrast(95%);
+  --media-icon-color-active: brightness(0) saturate(100%) invert(98%) sepia(73%) saturate(1302%) hue-rotate(42deg) brightness(99%) contrast(84%);
+
+  // Mobile
+  --sidebar-bg: #cecece;
+
+  // Hero
+  --dashboard-bg: #dddddd;
+  --dashboard-content-bg: #f0f0f0;
+  --dashboard-icon-bg: #e6e6e6;
+  --dashboard-task-bg: #e8e8e8;
+  --dashboard-task-active-bg: #d2d2d2;
+  --dashboard-task-active-color: #292929;
+  --collection-bg: #f0f0f0;
+  --collection-item-bg: #e8e8e8;
 }

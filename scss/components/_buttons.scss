@@ -5,7 +5,7 @@
   border-radius: 8px;
   padding: 0 40px;
 
-  background: #282C30;
+  background: var(--btn-bg);
   color: #F9F9F9;
 
   font-size: 1.6rem;
@@ -30,7 +30,7 @@
 
   &--outline {
     color: #83E868;
-    border: 1px solid #272633;
+    border: 1px solid var(--btn-outline-color);
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
       color: transparent;

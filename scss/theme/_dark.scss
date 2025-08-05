@@ -4,10 +4,27 @@ html.dark {
   --text-color-highlight: #F9F9F9;
 
   --linear-primary-bg: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
-  --sidebar-bg: #292E39;
+  --linear-decorator-bg: linear-gradient(180deg, #111118 6.06%, rgba(43, 43, 61, 0.00) 119.38%);
+  --decorator-shadow: 0 40px 30px 0 #313141 inset;
+
+  --btn-bg: #282C30;
+  --btn-outline-color: #272633;
 
   // #F9F9F9
   --logo-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5101%) hue-rotate(355deg) brightness(124%) contrast(95%);
-  --media-icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5101%) hue-rotate(355deg) brightness(124%) contrast(95%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5101%) hue-rotate(355deg) brightness(124%) contrast(95%);
   --media-icon-color-active: brightness(0) saturate(100%) invert(98%) sepia(73%) saturate(1302%) hue-rotate(42deg) brightness(99%) contrast(84%);
+
+  // Mobile
+  --sidebar-bg: #292E39;
+
+  // Hero
+  --dashboard-bg: #1F2326;
+  --dashboard-content-bg: #0D1012;
+  --dashboard-icon-bg: #151A1E;
+  --dashboard-task-bg: #14181B;
+  --dashboard-task-active-bg: #2B2D2F;
+  --dashboard-task-active-color: #D5D5D6;
+  --collection-bg: #0D1012;
+  --collection-item-bg: #14181B;
 }

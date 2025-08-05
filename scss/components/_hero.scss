@@ -108,7 +108,7 @@
     --decorator-width: 10px;
 
     position: relative;
-    display: inline-flex;
+    display: inline-block;
     line-height: normal;
 
     @include abstracts.screen(sm) {
@@ -117,8 +117,9 @@
 
     &--text {
       position: relative;
+      display: inline-block;
       color: #83E868;
-      padding: 0 4px 4px 4px;
+      padding: 0 6px 4px 4px;
 
       &::after {
         position: absolute;
@@ -263,8 +264,8 @@
   &__decorator {
     display: block;
     border-radius: 50%;
-    background: linear-gradient(180deg, #111118 6.06%, rgba(43, 43, 61, 0.00) 119.38%);
-    box-shadow: 0 40px 30px 0 #313141 inset;
+    background: var(--linear-decorator-bg);
+    box-shadow: var(--decorator-shadow);
 
     &--large {
       width: 12em;
@@ -303,7 +304,7 @@
   display: flex;
   width: 85em;
   border-radius: 8px 8px 0 0;
-  background: #1F2326;
+  background: var(--dashboard-bg);
   font-size: var(--font-size-media);
 
   &-menu {
@@ -315,6 +316,7 @@
     &__icon {
       width: 10px;
       height: 10px;
+      filter: var(--icon-color);
 
       @include abstracts.screen(md) {
         width: 6px;
@@ -350,8 +352,8 @@
       font-size: 1.2em;
 
       &--active {
-        background: #2B2D2F;
-        color: #D5D5D6;
+        background: var(--dashboard-task-active-bg);
+        color: var(--dashboard-task-active-color);
       }
     }
 
@@ -372,7 +374,7 @@
   }
 
   &-content {
-    background: #0D1012;
+    background: var(--dashboard-content-bg);
     flex: 1;
     margin: 2.5em 1.5em 0 0;
     padding: 2.5em;
@@ -395,13 +397,14 @@
         align-items: center;
         justify-content: center;
         padding: 0.5em;
-        background: #151A1E;
+        background: var(--dashboard-icon-bg);
         border-radius: 0.8em;
       }
 
       &-img {
         width: 1em;
         height: 1em;
+        filter: var(--icon-color);
       }
     }
 
@@ -434,11 +437,15 @@
       font-size: 1.2em;
       gap: 0.75em;
       margin-bottom: 0.75em;
+
+      >img {
+        filter: var(--icon-color);
+      }
     }
 
     &__item {
       position: relative;
-      background: #14181B;
+      background: var(--dashboard-task-bg);
       padding: 0.8em 1.4em;
       border-radius: 1em;
       margin-bottom: 1em;
@@ -471,7 +478,7 @@
 
     &__add {
       position: relative;
-      background: #14181B;
+      background: var(--dashboard-task-bg);
       padding: 0.8em 1.4em;
       border-radius: 1em;
       font-weight: 600;
@@ -609,6 +616,7 @@
       transition: visibility, opacity 0.2s;
       pointer-events: none;
       background: rgba($color: #000, $alpha: 0.2);
+      border-radius: 0 0 1.7em 1.7em;
 
       @include abstracts.screen(md) {
         gap: 4px;
@@ -687,7 +695,7 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      color: var(--text-color-highlight);
+      color: #F9F9F9;
 
       @include abstracts.screen(lg) {
         font-size: 0.8rem;
@@ -722,7 +730,7 @@
       >img {
         width: var(--sound-btn-icon-size);
         height: var(--sound-btn-icon-size);
-        filter: var(--media-icon-color);
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5101%) hue-rotate(355deg) brightness(124%) contrast(95%);
       }
     }
 
@@ -774,7 +782,7 @@
 
           &::-webkit-slider-thumb {
             appearance: none;
-            background: var(--text-color-highlight);
+            background: #F9F9F9;
             height: 10px;
             width: 10px;
             border-radius: 50%;
@@ -787,7 +795,7 @@
           right: 0;
           width: var(--sound-line-height);
           height: var(--sound-line-width);
-          background: var(--text-color-highlight);
+          background: #F9F9F9;
         }
       }
 
@@ -842,14 +850,14 @@
     font-size: var(--font-size-media);
     display: block;
     border-radius: 50%;
-    box-shadow: 0 40px 30px 0 #313141 inset;
+    box-shadow: var(--decorator-shadow);
 
     &--left {
       bottom: -7.4em;
       left: -12.2em;
       width: 9em;
       height: 9em;
-      background: linear-gradient(180deg, #111118 6.06%, rgba(43, 43, 61, 0.00) 119.38%);
+      background: var(--linear-decorator-bg);
     }
 
     &--right {
@@ -869,7 +877,7 @@
   width: 22em;
   padding: 2.5em 1.5em;
   border-radius: 1.5em;
-  background: #0D1012;
+  background: var(--collection-bg);
 
   &__header {
     display: flex;
@@ -895,7 +903,7 @@
     --collection-background: #FF7667;
     padding: 1.5em 1.2em;
     border-radius: 1.3em;
-    background: #14181B;
+    background: var(--collection-item-bg);
 
     &__info {
       display: flex;
