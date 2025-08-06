@@ -39,11 +39,11 @@
   }
 
   @include abstracts.screen(md) {
-    padding: 40px 0 70px;
+    padding: 40px 0 40px;
   }
 
   @include abstracts.screen(sm) {
-    padding: 0 0 70px;
+    padding: 0 0 40px;
   }
 
   &__content {

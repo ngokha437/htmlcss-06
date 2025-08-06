@@ -1,14 +1,55 @@
+@use '../abstracts';
+
 .service {
   --service-gap: 140px;
   --icon-size: 62px;
   --line-offset: 50px;
+
+  @include abstracts.screen(xxl) {
+    --line-offset: 40px;
+  }
+
+  @include abstracts.screen(xl) {
+    --service-gap: 70px;
+  }
+
+  @include abstracts.screen(lg) {
+    --service-gap: 80px;
+    --line-offset: 30px;
+  }
+
+  @include abstracts.screen(sm) {
+    --service-gap: 60px;
+  }
 
   display: flex;
   gap: var(--service-gap);
   margin: 70px 24px;
   padding: 70px 50px 50px 50px;
   border-radius: 27px;
-  background: #282C30;
+  background: var( --service-bg);
+
+  @include abstracts.screen(xl) {
+    margin: 70px 0;
+    padding: 70px 30px 50px 30px;
+  }
+
+  @include abstracts.screen(lg) {
+    flex-direction: column;
+    margin: 70px;
+    padding: 70px;
+  }
+
+  @include abstracts.screen(md) {
+    background: var(--service-bg-small-device);
+    margin: 40px 70px;
+    padding: 50px;
+  }
+
+  @include abstracts.screen(sm) {
+    margin: 40px 70px;
+    padding: 50px 30px;
+  }
 
   &__item {
     position: relative;
@@ -24,6 +65,14 @@
       width: calc(var(--service-gap) + 2 * var(--line-offset));
       right: calc(-1 * (var(--service-gap) + var(--line-offset)));
       border-bottom: 2px dashed;
+
+      @include abstracts.screen(lg) {
+        top: auto;
+        right: auto;
+        bottom: calc(var(--service-gap) * -0.5);
+        left: var(--line-offset);
+        width: calc(100% - 2 * var(--line-offset));
+      }
     }
   }
 
@@ -51,7 +100,7 @@
     &>img {
       width: 30px;
       height: 30px;
-      filter: var(--icon-color);
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5101%) hue-rotate(355deg) brightness(124%) contrast(95%);
     }
   }
 
@@ -61,6 +110,10 @@
     font-weight: 600;
     line-height: 145.455%;
     color: var(--text-color-highlight);
+
+    @include abstracts.screen(xl) {
+      font-size: 2rem;
+    }
   }
 
   &__desc {
