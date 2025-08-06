@@ -1,0 +1,71 @@
+.service {
+  --service-gap: 140px;
+  --icon-size: 62px;
+  --line-offset: 50px;
+
+  display: flex;
+  gap: var(--service-gap);
+  margin: 70px 24px;
+  padding: 70px 50px 50px 50px;
+  border-radius: 27px;
+  background: #282C30;
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:not(:last-child)::after {
+      position: absolute;
+      content: "";
+      top: calc(var(--icon-size) * 0.5);
+      width: calc(var(--service-gap) + 2 * var(--line-offset));
+      right: calc(-1 * (var(--service-gap) + var(--line-offset)));
+      border-bottom: 2px dashed;
+    }
+  }
+
+  &__icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    &--1 {
+      background: #0CCE84;
+    }
+
+    &--2 {
+      background: #EF8F00;
+    }
+
+    &--3 {
+      background: #AE8FF9;
+    }
+
+    &>img {
+      width: 30px;
+      height: 30px;
+      filter: var(--icon-color);
+    }
+  }
+
+  &__title {
+    margin-top: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 145.455%;
+    color: var(--text-color-highlight);
+  }
+
+  &__desc {
+    margin-top: 5px;
+    font-size: 1.6rem;
+    line-height: 162.5%;
+  }
+}
