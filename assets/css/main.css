@@ -2643,6 +2643,10 @@ html {
   align-items: center;
   text-align: center;
   gap: 16px;
+  cursor: pointer;
+}
+.stats__item:not(.stats__item--active):hover {
+  opacity: 0.8;
 }
 @media (max-width: 1199.98px) {
   .stats__item {
@@ -2664,15 +2668,16 @@ html {
 }
 @media (max-width: 767.98px) {
   .stats__item--among {
+    position: absolute;
     margin-top: 50px;
   }
 }
 .stats__item--active {
   background: linear-gradient(192deg, #C4F566 -43.72%, #AE8EF9 -5.87%, #EF8F00 52.36%, #61E559 122.78%);
+  cursor: default;
 }
 @media (max-width: 767.98px) {
   .stats__item--active {
-    position: absolute;
     width: 90px;
     height: 90px;
   }
