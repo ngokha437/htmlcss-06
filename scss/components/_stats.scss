@@ -1,7 +1,19 @@
+@use '../abstracts';
+
 .stats {
   margin: 140px 0;
   display: flex;
   gap: 20px;
+
+  @include abstracts.screen(lg) {
+    flex-direction: column;
+    margin: 140px 70px;
+    gap: 120px;
+  }
+
+  @include abstracts.screen(md) {
+    margin: 80px 70px;
+  }
 
   &__content {
     flex: 0.45;
@@ -12,6 +24,14 @@
     font-size: 4rem;
     font-weight: 600;
     color: var(--text-color-highlight);
+
+    @include abstracts.screen(xl) {
+      font-size: 3.6rem;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: 3rem;
+    }
 
     &--let {
       color: #83E868;
@@ -28,6 +48,13 @@
   &__desc {
     margin-top: 20px;
     line-height: 162.5%;
+
+    @include abstracts.screen(md) {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 183.333%;
+    }
   }
 
   &__list {
@@ -36,6 +63,16 @@
     display: flex;
     gap: 16px;
     width: fit-content;
+
+    @include abstracts.screen(lg) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @include abstracts.screen(md) {
+      gap: 70px;
+      margin-top: 40px;
+    }
   }
 
   &__dots {
@@ -45,6 +82,10 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    @include abstracts.screen(md) {
+      display: none;
+    }
   }
 
   &__dot {
@@ -71,13 +112,37 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 16px;
+
+    @include abstracts.screen(xl) {
+      width: 120px;
+      height: 120px;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    @include abstracts.screen(md) {
+      width: 100px;
+      height: 100px;
+      padding: 15px;
+    }
 
     &--among {
       margin-top: 35px;
+
+      @include abstracts.screen(md) {
+        margin-top: 50px;
+      }
     }
 
     &--active {
       background: linear-gradient(192deg, #C4F566 -43.72%, #AE8EF9 -5.87%, #EF8F00 52.36%, #61E559 122.78%);
+
+      @include abstracts.screen(md) {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+      }
 
       >.stats__label {
         color: var(--text-color-highlight);
@@ -89,11 +154,18 @@
     font-size: 3rem;
     font-weight: 600;
     color: var(--text-color-highlight);
+
+    @include abstracts.screen(md) {
+      font-size: 2rem;
+    }
   }
 
   &__label {
-    margin-top: 16px;
     line-height: 162.5%;
+
+    @include abstracts.screen(md) {
+      font-size: 1.2rem;
+    }
   }
 
   &__media {
@@ -101,12 +173,25 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 1rem;
+
+    @include abstracts.screen(xl) {
+      font-size: 0.8rem;
+    }
+
+    @include abstracts.screen(lg) {
+      justify-content: center;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: 0.6rem;
+    }
   }
 
   &__diagram {
     position: relative;
-    width: 455px;
-    height: 455px;
+    width: 45.5em;
+    height: 45.5em;
     margin: 35px 50px;
   }
 
@@ -115,31 +200,31 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 210px;
-    height: 210px;
+    width: 21em;
+    height: 21em;
     border-radius: 50%;
     background: #6AEA5C content-box;
-    border: 35px solid #6AEA5C80;
+    border: 3.5em solid #6AEA5C80;
 
     &::before,
     &::after {
       position: absolute;
       content: "";
       border-radius: 50%;
-      border: 2px dashed #2F2F2F;
+      border: 2px dashed var(--stats-circle-border);
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
     }
 
     &::before {
-      width: 336px;
-      height: 336px;
+      width: 33.6em;
+      height: 33.6em;
     }
 
     &::after {
-      width: 455px;
-      height: 455px;
+      width: 45.5em;
+      height: 45.5em;
     }
   }
 
@@ -160,18 +245,18 @@
       gap: 16px;
 
       &-side {
-        margin-top: 30px;
+        margin-top: 3em;
       }
 
       &-among {
-        margin-top: -30px;
+        margin-top: -3em;
       }
     }
 
     &--item {
-      width: 150px;
-      height: 200px;
-      background: #191B1D;
+      width: 15em;
+      height: 20em;
+      background: var(--stats-rectangle-bg);
     }
   }
 
@@ -180,54 +265,78 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 18px;
-    background: #27292C;
-    height: 55px;
-    width: 200px;
+    padding: 1em 1.8em;
+    background: var(--stats-badge-bg);
+    height: 5.5em;
+    width: 20em;
     border-radius: 5px;
 
     &-content {
       display: flex;
       align-items: center;
       gap: 15px;
+
+      @include abstracts.screen(md) {
+        gap: 5px;
+      }
     }
 
     &--name {
-      font-size: 14px;
+      font-size: 1.4em;
       font-weight: 600;
     }
 
     &--icon {
-      width: 32px;
-      height: 32px;
+      width: 3.2em;
+      height: 3.2em;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #363A3E;
+      flex-shrink: 0;
+      background: var(--stats-badge-icon-bg);
+    }
+
+    &--img {
+      @include abstracts.screen(xl) {
+        scale: 0.8;
+      }
+
+      @include abstracts.screen(md) {
+        scale: 0.6;
+      }
     }
 
     &--1 {
-      height: 60px;
-      width: 225px;
-      top: 25px;
-      left: -55px;
+      height: 6.0em;
+      width: 22.5em;
+      top: 2.5em;
+      left: -5.5em;
+
+      img {
+        padding-left: 2px;
+      }
     }
 
     &--2 {
-      width: 230px;
-      bottom: 120px;
-      left: -100px;
+      justify-content: space-between;
+      width: 23em;
+      bottom: 12em;
+      left: -10em;
     }
 
     &--3 {
-      top: 20px;
-      right: -20px;
+      top: 2em;
+      right: -2em;
+
+      img {
+        padding: 0.2em 0.2em 0 0;
+      }
     }
 
     &--4 {
-      bottom: 45px;
-      right: -35px;
+      bottom: 4.5em;
+      right: -3.5em;
     }
 
     &--1 &--name {
@@ -282,8 +391,9 @@
 
     &--user {
       position: relative;
-      width: 32px;
-      height: 32px;
+      z-index: 1;
+      width: 3.2em;
+      height: 3.2em;
 
       &::after {
         position: absolute;
@@ -295,11 +405,7 @@
       }
 
       &--1 {
-        margin-right: -12px;
-      }
-
-      &--2 {
-        z-index: 1;
+        margin-right: -1.2em;
       }
 
       &--1::after {
