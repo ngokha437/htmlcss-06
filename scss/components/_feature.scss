@@ -1,12 +1,24 @@
+@use '../abstracts';
+
 .feature {
   margin: 140px 0;
-  background: #191B1D;
+  background: var(--feature-bg);
+
+  @include abstracts.screen(md) {
+    background: unset;
+  }
 
   &__timeline {
     position: relative;
     display: flex;
     justify-content: center;
     padding: 80px 0;
+
+    @include abstracts.screen(md) {
+      background: var(--feature-bg);
+      justify-content: flex-start;
+      padding: 50px 0 100px 50px;
+    }
 
     &-list {
       position: relative;
@@ -15,6 +27,11 @@
       justify-content: space-between;
       width: 300px;
       height: 380px;
+
+      @include abstracts.screen(md) {
+        width: 220px;
+        height: 300px;
+      }
 
       &::after {
         position: absolute;
@@ -27,12 +44,17 @@
         border-radius: 50%;
         background: linear-gradient(180deg, #6AEA5C 0%, #FD7566 48.53%, #EF8F00 100%);
         filter: blur(70px);
+
+        @include abstracts.screen(md) {
+          width: 220px;
+          height: 220px;
+        }
       }
     }
 
     &-item {
       position: relative;
-      border-left: 1px dashed #D0D0D0;
+      border-left: 1px dashed var(--feature-timeline-border);
     }
 
     &-hour {
@@ -45,6 +67,9 @@
     }
 
     &-bubble {
+      --paddingX-12: 20px;
+      --avatar-user-size: 3.6rem;
+
       position: absolute;
       z-index: 1;
       display: flex;
@@ -52,12 +77,23 @@
       gap: 16px;
       padding: 20px;
       border-radius: 12px;
-      background: rgba(0, 0, 0, 0.7);
+      background: var(--feature-bubble-bg);
       white-space: nowrap;
 
+      @include abstracts.screen(lg) {
+        --avatar-user-size: 3.6rem;
+        --paddingX-12: 12px;
+        padding: 12px;
+      }
+
+      @include abstracts.screen(md) {
+        --avatar-user-size: 2.4rem;
+        gap: 8px;
+      }
+
       &--user {
-        width: 3.6rem;
-        height: 3.6rem;
+        width: var(--avatar-user-size);
+        height: var(--avatar-user-size);
       }
 
       &--avatar {
@@ -67,11 +103,21 @@
         border: 1px solid #BDBDBD;
       }
 
+      &--name {
+        @include abstracts.screen(lg) {
+          font-size: 1.2rem;
+        }
+      }
+
       &--1 {
-        left: -40px;
+        left: calc(-1 * var(--paddingX-12) - 0.5 * var(--avatar-user-size));
         transform: translateY(-50%);
-        padding: 10px 20px;
-        background: rgba(0, 0, 0, 0.32);
+        padding: 10px var(--paddingX-12);
+        background: var(--feature-bubble-bg-lighter);
+
+        @include abstracts.screen(lg) {
+          padding: 8px var(--paddingX-12);
+        }
 
         & .feature__timeline-bubble--name {
           color: #0CCE84;
@@ -86,7 +132,7 @@
       }
 
       &--2 {
-        left: -40px;
+        left: calc(-1 * var(--paddingX-12) - 0.5 * var(--avatar-user-size));
         bottom: 35px;
 
         & .feature__timeline-bubble--name {
@@ -105,6 +151,14 @@
         top: 50%;
         left: -80px;
 
+        @include abstracts.screen(xl) {
+          left: -160px;
+        }
+
+        @include abstracts.screen(lg) {
+          left: -80px;
+        }
+
         & .feature__timeline-bubble--name {
           color: #FD7566;
 
@@ -122,9 +176,15 @@
       position: absolute;
       z-index: 1;
       top: 90px;
-      left: -85px;
+      transform: translateX(calc(-50% - 10px));
       height: 65px;
       backdrop-filter: blur(5px);
+
+      @include abstracts.screen(md) {
+        top: 50px;
+        transform: translateX(calc(-50%));
+        height: 55px;
+      }
 
       &--content {
         display: flex;
@@ -133,8 +193,12 @@
         text-align: center;
         padding: 10px 35px 10px 50px;
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.36);
+        background: var(--feature-speech-bg);
         gap: 2px;
+
+        @include abstracts.screen(md) {
+          padding: 6px 25px;
+        }
       }
 
       &--arrow {
@@ -142,8 +206,14 @@
         right: 50px;
         width: 30px;
         height: 25px;
-        background: rgba(255, 255, 255, 0.36);
+        background: var(--feature-speech-bg);
         clip-path: polygon(0 0, 50% 50%, 100% 0);
+
+        @include abstracts.screen(md) {
+          right: 45px;
+          width: 25px;
+          height: 20px;
+        }
       }
 
       &--content,
@@ -166,6 +236,20 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    padding: 50px 20px;
+
+    @include abstracts.screen(xl) {
+      padding: 50px 0;
+    }
+
+    @include abstracts.screen(lg) {
+      padding: 50px;
+    }
+
+    @include abstracts.screen(md) {
+      padding: 0;
+      background: var(--feature-bg);
+    }
   }
 
   &__heading {
@@ -173,6 +257,14 @@
     font-weight: 600;
     line-height: 125%;
     color: var(--text-color-highlight);
+
+    @include abstracts.screen(lg) {
+      font-size: 3.6rem;
+    }
+
+    @include abstracts.screen(md) {
+      font-size: 3rem;
+    }
 
     &--team-succeed {
       color: #83E868;
@@ -191,6 +283,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 25px 35px;
     margin-top: 50px;
+
+    @include abstracts.screen(xl) {
+      gap: 25px 20px;
+    }
+
+    @include abstracts.screen(md) {
+      grid-template-columns: auto;
+      padding: 0 50px 50px 50px;
+    }
   }
 
   &__check-item {
