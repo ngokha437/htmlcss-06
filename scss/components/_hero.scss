@@ -115,7 +115,7 @@
       --decorator-width: 7px;
     }
 
-    &--text {
+    &-text {
       position: relative;
       display: inline-block;
       color: #83E868;
@@ -207,7 +207,7 @@
       margin-top: 30px;
     }
 
-    &--btn {
+    &-btn {
       width: 200px;
 
       @include abstracts.screen(lg) {
@@ -633,16 +633,16 @@
       height: 3px;
       background: #30302C;
 
-      &--progress,
-      &--buffered,
-      &--played {
+      &-progress,
+      &-buffered,
+      &-played {
         position: absolute;
         top: 0;
         left: 0;
         height: 3px;
       }
 
-      &--progress {
+      &-progress {
         position: absolute;
         z-index: 10;
         top: 0;
@@ -665,14 +665,14 @@
         }
       }
 
-      &--played {
+      &-played {
         position: absolute;
         z-index: 1;
         top: 0;
         background: var(--linear-primary-bg);
       }
 
-      &--buffered {
+      &-buffered {
         background: #a6a6a6;
         pointer-events: none;
       }
@@ -766,7 +766,7 @@
           background: #a6a6a6;
         }
 
-        &--slider {
+        &-slider {
           position: absolute;
           z-index: 1;
           left: 0;
@@ -790,7 +790,7 @@
 
         }
 
-        &--value {
+        &-value {
           position: absolute;
           right: 0;
           width: var(--sound-line-height);
@@ -933,7 +933,7 @@
       align-items: center;
       gap: 0.8em;
 
-      &--bar {
+      &-bar {
         position: relative;
         flex: 1;
         height: 0.3em;

@@ -33,7 +33,7 @@
       font-size: 3rem;
     }
 
-    &--let {
+    &-let {
       color: #83E868;
 
       @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -245,21 +245,21 @@
     rotate: 12deg;
     transform-origin: top left;
 
-    &--group {
+    &-group {
       display: flex;
       flex-direction: column;
       gap: 16px;
 
-      &-side {
+      &--side {
         margin-top: 3em;
       }
 
-      &-among {
+      &--among {
         margin-top: -3em;
       }
     }
 
-    &--item {
+    &-item {
       width: 15em;
       height: 20em;
       background: var(--stats-rectangle-bg);
@@ -287,12 +287,12 @@
       }
     }
 
-    &--name {
+    &-name {
       font-size: 1.4em;
       font-weight: 600;
     }
 
-    &--icon {
+    &-icon {
       width: 3.2em;
       height: 3.2em;
       border-radius: 50%;
@@ -303,7 +303,7 @@
       background: var(--stats-badge-icon-bg);
     }
 
-    &--img {
+    &-img {
       @include abstracts.screen(xl) {
         scale: 0.8;
       }
@@ -345,7 +345,7 @@
       right: -3.5em;
     }
 
-    &--1 &--name {
+    &--1 &-name {
       color: #EF8F00;
 
       @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -356,7 +356,7 @@
       }
     }
 
-    &--2 &--name {
+    &--2 &-name {
       color: #C4F566;
 
       @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -367,7 +367,7 @@
       }
     }
 
-    &--3 &--name {
+    &--3 &-name {
       color: #0CCE84;
 
       @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -378,7 +378,7 @@
       }
     }
 
-    &--4 &--name {
+    &--4 &-name {
       color: #C4F566;
 
       @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -389,13 +389,13 @@
       }
     }
 
-    &--avatar-group {
+    &-avatar-group {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    &--user {
+    &-user {
       position: relative;
       z-index: 1;
       width: 3.2em;
@@ -423,7 +423,7 @@
       }
     }
 
-    &--avatar {
+    &-avatar {
       width: 100%;
       height: 100%;
       border-radius: 50%;

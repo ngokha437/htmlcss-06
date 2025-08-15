@@ -91,19 +91,19 @@
         gap: 8px;
       }
 
-      &--user {
+      &-user {
         width: var(--avatar-user-size);
         height: var(--avatar-user-size);
       }
 
-      &--avatar {
+      &-avatar {
         width: 100%;
         height: 100%;
         border-radius: 50%;
         border: 1px solid #BDBDBD;
       }
 
-      &--name {
+      &-name {
         @include abstracts.screen(lg) {
           font-size: 1.2rem;
         }
@@ -119,7 +119,7 @@
           padding: 8px var(--paddingX-12);
         }
 
-        & .feature__timeline-bubble--name {
+        & .feature__timeline-bubble-name {
           color: #0CCE84;
 
           @supports (background-clip: text) or(-webkit-background-clip: text) {
@@ -135,7 +135,7 @@
         left: calc(-1 * var(--paddingX-12) - 0.5 * var(--avatar-user-size));
         bottom: 35px;
 
-        & .feature__timeline-bubble--name {
+        & .feature__timeline-bubble-name {
           color: #0CCE84;
 
           @supports (background-clip: text) or(-webkit-background-clip: text) {
@@ -159,7 +159,7 @@
           left: -80px;
         }
 
-        & .feature__timeline-bubble--name {
+        & .feature__timeline-bubble-name {
           color: #FD7566;
 
           @supports (background-clip: text) or(-webkit-background-clip: text) {
@@ -186,7 +186,7 @@
         height: 55px;
       }
 
-      &--content {
+      &-content {
         display: flex;
         flex-direction: column;
         white-space: nowrap;
@@ -201,7 +201,7 @@
         }
       }
 
-      &--arrow {
+      &-arrow {
         position: absolute;
         right: 50px;
         width: 30px;
@@ -216,13 +216,13 @@
         }
       }
 
-      &--content,
-      &--arrow {
+      &-content,
+      &-arrow {
         backdrop-filter: blur(15px);
       }
 
-      &--percent,
-      &--name {
+      &-percent,
+      &-name {
         font-size: 1.2rem;
         color: var(--text-color-highlight);
       }
@@ -266,7 +266,7 @@
       font-size: 3rem;
     }
 
-    &--team-succeed {
+    &-team-succeed {
       color: #83E868;
 
       @supports(background-clip: text) or (-webkit-background-clip: text) {
@@ -336,19 +336,19 @@
       rotate: 45deg;
     }
 
-    &--wrap {
+    &-info {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    &--title {
+    &-title {
       font-size: 1.8rem;
       font-weight: 600;
       color: var(--text-color-highlight);
     }
 
-    &--desc {
+    &-desc {
       font-size: 1.4rem;
       line-height: 171.429%;
     }
