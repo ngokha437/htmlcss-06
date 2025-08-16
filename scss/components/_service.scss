@@ -42,12 +42,12 @@
 
   @include abstracts.screen(md) {
     background: var(--service-bg-small-device);
-    margin: 40px 70px;
+    margin: 40px 50px;
     padding: 50px;
   }
 
   @include abstracts.screen(sm) {
-    margin: 40px 70px;
+    margin: 40px 10px;
     padding: 50px 30px;
   }
 
