@@ -88,6 +88,21 @@
     line-height: 70px;
     color: var(--text-color-highlight);
 
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FF7667;
+      margin: 0 0 -10px -12px;
+      opacity: 0.75;
+
+      @include abstracts.screen(md) {
+        content: initial;
+      }
+    }
+
     @include abstracts.screen(lg) {
       font-size: 4.4rem;
     }
@@ -401,6 +416,10 @@
         border-radius: 0.8em;
       }
 
+      &-text {
+        font-size: 1.4em;
+      }
+
       &-img {
         width: 1em;
         height: 1em;
@@ -414,9 +433,7 @@
       gap: 7.5em;
 
       &--user-icon {
-        @include abstracts.screen(md) {
-          height: 12px;
-        }
+        height: 2em;
       }
     }
 
@@ -439,12 +456,12 @@
       margin-bottom: 0.75em;
 
       >img {
+        height: 0.5em;
         filter: var(--icon-color);
       }
     }
 
     &__item {
-      position: relative;
       background: var(--dashboard-task-bg);
       padding: 0.8em 1.4em;
       border-radius: 1em;
@@ -452,56 +469,60 @@
       font-weight: 300;
       display: flex;
       align-items: center;
-      column-gap: 3.2rem;
+      column-gap: 3.2em;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        border: 1px solid #0CCE84;
-        border-radius: 0.4em;
-      }
+      &--add {
+        font-weight: 600;
+        color: var(--text-color-highlight);
+        margin-bottom: 0;
 
-      &::after {
-        position: absolute;
-        top: 1em;
-        left: 2em;
-        content: "";
-        width: 0.4em;
-        height: 0.8em;
-        border: 1px solid;
-        border-color: transparent #9EA1A7 #9EA1A7 transparent;
-        rotate: 45deg;
+        .dashboard-task__checkbox {
+          background: #0CCE84;
+
+          &::before {
+            background-image: url('../icons/plus.svg');
+            width: 0.6em;
+            height: 0.6em;
+          }
+        }
       }
     }
 
-    &__add {
+    &__checkbox {
       position: relative;
-      background: var(--dashboard-task-bg);
-      padding: 0.8em 1.4em;
-      border-radius: 1em;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      column-gap: 3.2rem;
-      color: var(--text-color-highlight);
+      width: 1.6em;
+      height: 1.6em;
+      border: 1px solid #0CCE84;
+      border-radius: 0.4em;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
-        background: #0CCE84;
-        border-radius: 0.4em;
+      @include abstracts.screen(md) {
+        border-width: 0.5px;
       }
 
-      &::after {
+      &::before {
         position: absolute;
-        content: '+';
-        font-size: 1.2em;
-        top: 0.8em;
-        left: 1.5em;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        content: "";
+        background-image: url('../icons/check-hero.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 1rem;
+        width: 0.8em;
+        height: 0.6em;
+
+        @include abstracts.screen(lg) {
+          font-size: 0.7rem;
+        }
+
+        @include abstracts.screen(md) {
+          font-size: 0.5rem;
+        }
+
+        @include abstracts.screen(sm) {
+          font-size: 0.4rem;
+        }
       }
     }
   }
@@ -872,7 +893,7 @@
 
 .collection {
   position: absolute;
-  bottom: -15em;
+  top: 18em;
   left: -7.5em;
   width: 22em;
   padding: 2.5em 1.5em;
@@ -901,7 +922,7 @@
   &-item {
     --collection-icon-width: 3.2em;
     --collection-background: #FF7667;
-    padding: 1.5em 1.2em;
+    padding: 1.2em;
     border-radius: 1.3em;
     background: var(--collection-item-bg);
 
@@ -924,7 +945,7 @@
     }
 
     &__desc {
-      margin-top: 0.8em;
+      margin-top: 0.2em;
     }
 
     &__progress {

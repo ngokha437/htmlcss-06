@@ -159,6 +159,11 @@
           left: -80px;
         }
 
+        @include abstracts.screen(sm) {
+          left: initial;
+          right: -50px;
+        }
+
         & .feature__timeline-bubble-name {
           color: #FD7566;
 
@@ -264,6 +269,7 @@
 
     @include abstracts.screen(md) {
       font-size: 3rem;
+      padding: 0 10px;
     }
 
     &-team-succeed {
@@ -325,15 +331,16 @@
     }
 
     &::after {
-      content: "";
       position: absolute;
-      left: 6px;
-      top: 2px;
-      width: 8px;
-      height: 12px;
-      border: 2px solid;
-      border-color: transparent #FDFDFD #FDFDFD transparent;
-      rotate: 45deg;
+      left: 0.5em;
+      top: 0.5em;
+      content: "";
+      background-image: url('../icons/check.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      font-size: 1rem;
+      width: 1.2em;
+      height: 1.2em;
     }
 
     &-info {

@@ -12,7 +12,11 @@
   }
 
   @include abstracts.screen(md) {
-    margin: 80px 70px;
+    margin: 80px 50px;
+  }
+
+  @include abstracts.screen(sm) {
+    margin: 80px 10px;
   }
 
   &__content {
@@ -327,13 +331,17 @@
     &--2 {
       justify-content: space-between;
       width: 23em;
-      bottom: 12em;
+      bottom: 10em;
       left: -10em;
     }
 
     &--3 {
       top: 2em;
       right: -2em;
+
+      @include abstracts.screen(sm) {
+        right: -7em;
+      }
 
       img {
         padding: 0.2em 0.2em 0 0;
