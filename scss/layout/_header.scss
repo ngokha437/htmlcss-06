@@ -5,6 +5,7 @@
   top: 0;
   z-index: 99;
   border-radius: 8px;
+  background: var(--body-bg);
   
   &.scrolled {
     box-shadow: 0px 2px 10px #000;

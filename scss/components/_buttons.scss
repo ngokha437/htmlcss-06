@@ -1,6 +1,10 @@
 @use '../abstracts';
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   height: 55px;
   border-radius: 8px;
   padding: 0 40px;
