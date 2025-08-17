@@ -4,6 +4,7 @@ html.dark {
   --text-color-highlight: #F9F9F9;
 
   --linear-primary-bg: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+  --linear-primary-bg-revert: linear-gradient(270deg, #EB9204 -33.14%, #83E868 116.38%);
   --linear-decorator-bg: linear-gradient(180deg, #111118 6.06%, rgba(43, 43, 61, 0.00) 119.38%);
   --decorator-shadow: 0 40px 30px 0 #313141 inset;
 
@@ -45,4 +46,13 @@ html.dark {
   --feature-bubble-bg: rgba(0, 0, 0, 0.7);
   --feature-bubble-bg-lighter: rgba(0, 0, 0, 0.32);
   --feature-speech-bg: rgba(255, 255, 255, 0.36);
+
+  // Design
+  --design-bg: #191B1D;
+  --design-text-color: #FFF;
+  --desktop-item-bg: #313539;
+  --desktop-item-border: #282B2E;
+  --daily-task-bar-bg: #272633;
+  --status-label-color: #D0D1D2;
+  --member-divider: #25282B;
 }

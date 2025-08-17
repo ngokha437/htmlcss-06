@@ -42,3 +42,19 @@ statsItems.forEach((item, index) => {
     }
   });
 });
+
+// Design
+const desktopList = $(".desktop-list");
+let activeItem = $(".desktop-item--active");
+
+desktopList.addEventListener("click", (e) => {
+  const item = e.target.closest(".desktop-item");
+  if (!item) return;
+
+  if (activeItem) {
+    activeItem.classList.remove("desktop-item--active");
+  }
+
+  item.classList.add("desktop-item--active");
+  activeItem = item;
+});

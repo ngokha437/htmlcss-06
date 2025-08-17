@@ -1311,6 +1311,7 @@ html.dark {
   --text-color: #858B93;
   --text-color-highlight: #F9F9F9;
   --linear-primary-bg: linear-gradient(90deg, #EB9204 -33.14%, #83E868 116.38%);
+  --linear-primary-bg-revert: linear-gradient(270deg, #EB9204 -33.14%, #83E868 116.38%);
   --linear-decorator-bg: linear-gradient(180deg, #111118 6.06%, rgba(43, 43, 61, 0.00) 119.38%);
   --decorator-shadow: 0 40px 30px 0 #313141 inset;
   --btn-bg: #282C30;
@@ -1339,6 +1340,13 @@ html.dark {
   --feature-bubble-bg: rgba(0, 0, 0, 0.7);
   --feature-bubble-bg-lighter: rgba(0, 0, 0, 0.32);
   --feature-speech-bg: rgba(255, 255, 255, 0.36);
+  --design-bg: #191B1D;
+  --design-text-color: #FFF;
+  --desktop-item-bg: #313539;
+  --desktop-item-border: #282B2E;
+  --daily-task-bar-bg: #272633;
+  --status-label-color: #D0D1D2;
+  --member-divider: #25282B;
 }
 
 html {
@@ -1374,6 +1382,13 @@ html {
   --feature-bubble-bg: rgba(255, 255, 255, 0.7);
   --feature-bubble-bg-lighter: rgba(255, 255, 255, 0.32);
   --feature-speech-bg: rgba(0, 0, 0, 0.36);
+  --design-bg: #e4e4e4;
+  --design-text-color: #000;
+  --desktop-item-bg: #cacaca;
+  --desktop-item-border: #d4d4d4;
+  --daily-task-bar-bg: #d3d3d3;
+  --status-label-color: #2e2e2e;
+  --member-divider: #d7d7d7;
 }
 
 .sticky-header {
@@ -1489,6 +1504,7 @@ html {
 }
 
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3442,12 +3458,12 @@ html {
   position: relative;
   padding: 4.5em;
   border-radius: 2em;
-  background: #191B1D;
+  background: var(--design-bg);
 }
 .design .desktop__heading {
   width: 10.455em;
   margin-top: 0.455em;
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 2.2em;
   font-weight: 600;
 }
@@ -3472,12 +3488,12 @@ html {
   align-items: center;
   gap: 2em;
   border-radius: 1em;
-  border: 1px solid #282B2E;
+  border: 1px solid var(--desktop-item-border);
   padding: 1.2em 2em;
   cursor: pointer;
 }
 .design .desktop-item--active {
-  background: #313539;
+  background: var(--desktop-item-bg);
   cursor: default;
 }
 .design .desktop-item--active .desktop-item__name {
@@ -3522,10 +3538,10 @@ html {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  background: #313539;
+  background: var(--desktop-item-bg);
 }
 .design .desktop-item__name {
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 1.2em;
   opacity: 0.7;
 }
@@ -3558,7 +3574,7 @@ html {
   position: relative;
   padding: 3em 4.5em;
   border-radius: 2em;
-  background: #191B1D;
+  background: var(--design-bg);
 }
 .design .daily-task__info {
   display: flex;
@@ -3613,7 +3629,7 @@ html {
   background: #23D12A;
 }
 .design .daily-task__heading {
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 2.2em;
   font-weight: 600;
 }
@@ -3642,7 +3658,7 @@ html {
   width: 24em;
   height: 1.6em;
   border-radius: 99px;
-  background: #272633;
+  background: var(--daily-task-bar-bg);
 }
 .design .daily-task__bar::before {
   position: absolute;
@@ -3661,7 +3677,7 @@ html {
   display: flex;
   padding: 1.2em;
   border-radius: 2em;
-  background: #191B1D;
+  background: var(--design-bg);
 }
 .design .daily-media__three-dot {
   position: absolute;
@@ -3703,7 +3719,7 @@ html {
   width: 3.5em;
   height: 3.5em;
   border-radius: 50%;
-  background: #191B1D;
+  background: var(--design-bg);
   rotate: -45deg;
 }
 .design .daily-media__disk-star {
@@ -3715,7 +3731,7 @@ html {
 }
 .design .daily-media__title {
   margin-left: 1.591em;
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 2.2em;
   font-weight: 600;
 }
@@ -3756,7 +3772,7 @@ html {
 }
 .design .status__label {
   font-size: 1.4em;
-  color: #D0D1D2;
+  color: var(--status-label-color);
 }
 .design .status__user {
   margin-top: 0.286em;
@@ -3768,11 +3784,11 @@ html {
   position: relative;
   padding: 2.5em 3.5em;
   border-radius: 2em;
-  background: #191B1D;
+  background: var(--design-bg);
 }
 .design .team__heading {
   display: inline-block;
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 2.2em;
   font-weight: 600;
 }
@@ -3825,7 +3841,7 @@ html {
   bottom: 0;
   content: "";
   width: 100%;
-  border-bottom: 1px solid #25282B;
+  border-bottom: 1px solid var(--member-divider);
 }
 .design .member__avatar {
   position: relative;
@@ -3849,7 +3865,7 @@ html {
   border: 1px solid #6AEA5C;
 }
 .design .member__name {
-  color: #FFF;
+  color: var(--design-text-color);
   font-size: 1.2em;
 }
 

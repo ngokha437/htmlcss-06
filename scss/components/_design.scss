@@ -106,12 +106,12 @@
     position: relative;
     padding: 4.5em;
     border-radius: 2em;
-    background: #191B1D;
+    background: var(--design-bg);
 
     &__heading {
       width: 10.455em;
       margin-top: 0.455em;
-      color: #FFF;
+      color: var(--design-text-color);
       font-size: 2.2em;
       font-weight: 600;
     }
@@ -140,12 +140,12 @@
       align-items: center;
       gap: 2em;
       border-radius: 1em;
-      border: 1px solid #282B2E;
+      border: 1px solid var(--desktop-item-border);
       padding: 1.2em 2em;
       cursor: pointer;
 
       &--active {
-        background: #313539;
+        background: var(--desktop-item-bg);
         cursor: default;
 
         .desktop-item__name {
@@ -192,11 +192,11 @@
         width: 2em;
         height: 2em;
         border-radius: 50%;
-        background: #313539;
+        background: var(--desktop-item-bg);
       }
 
       &__name {
-        color: #FFF;
+        color: var(--design-text-color);
         font-size: 1.2em;
         opacity: 0.7;
       }
@@ -237,7 +237,7 @@
     position: relative;
     padding: 3em 4.5em;
     border-radius: 2em;
-    background: #191B1D;
+    background: var(--design-bg);
 
     &__info {
       display: flex;
@@ -293,7 +293,7 @@
     }
 
     &__heading {
-      color: #FFF;
+      color: var(--design-text-color);
       font-size: 2.2em;
       font-weight: 600;
     }
@@ -327,7 +327,7 @@
       width: 24em;
       height: 1.6em;
       border-radius: 99px;
-      background: #272633;
+      background: var(--daily-task-bar-bg);
 
       &::before {
         position: absolute;
@@ -350,7 +350,7 @@
     display: flex;
     padding: 1.2em;
     border-radius: 2em;
-    background: #191B1D;
+    background: var(--design-bg);
 
     &__three-dot {
       position: absolute;
@@ -398,7 +398,7 @@
         width: 3.5em;
         height: 3.5em;
         border-radius: 50%;
-        background: #191B1D;
+        background: var(--design-bg);
         rotate: -45deg;
       }
 
@@ -414,7 +414,7 @@
 
     &__title {
       margin-left: 1.591em;
-      color: #FFF;
+      color: var(--design-text-color);
       font-size: 2.2em;
       font-weight: 600;
     }
@@ -463,7 +463,7 @@
 
     &__label {
       font-size: 1.4em;
-      color: #D0D1D2;
+      color: var(--status-label-color);
     }
 
     &__user {
@@ -478,11 +478,11 @@
     position: relative;
     padding: 2.5em 3.5em;
     border-radius: 2em;
-    background: #191B1D;
+    background: var(--design-bg);
 
     &__heading {
       display: inline-block;
-      color: #FFF;
+      color: var(--design-text-color);
       font-size: 2.2em;
       font-weight: 600;
 
@@ -543,7 +543,7 @@
       bottom: 0;
       content: "";
       width: 100%;
-      border-bottom: 1px solid #25282B;
+      border-bottom: 1px solid var(--member-divider);
     }
 
     &__avatar {
@@ -571,7 +571,7 @@
     }
 
     &__name {
-      color: #FFF;
+      color: var(--design-text-color);
       font-size: 1.2em;
     }
   }
