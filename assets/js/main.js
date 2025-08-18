@@ -58,3 +58,23 @@ desktopList.addEventListener("click", (e) => {
   item.classList.add("desktop-item--active");
   activeItem = item;
 });
+
+// Solution
+const cardItems = $$(".card-item");
+const mediaList = $$(".media-list");
+
+function setActiveSolution(index) {
+  cardItems.forEach((dot) => dot.classList.remove("card-item--active"));
+  mediaList.forEach((item) => item.classList.remove("media-list--active"));
+
+  cardItems[index].classList.add("card-item--active");
+  mediaList[index].classList.add("media-list--active");
+}
+
+cardItems.forEach((card, index) => {
+  card.addEventListener("click", function () {
+    if (!this.classList.contains("card-item--active")) {
+      setActiveSolution(index);
+    }
+  });
+});
