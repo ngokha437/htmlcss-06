@@ -6,6 +6,7 @@
 
   @include abstracts.screen(md) {
     background: unset;
+    margin: 80px 0;
   }
 
   &__timeline {
