@@ -1,0 +1,168 @@
+@use '../abstracts';
+
+.news {
+  margin: 70px 0;
+
+  &__heading {
+    width: 550px;
+    margin: 0 auto;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--text-color-highlight);
+    text-align: center;
+
+    @include abstracts.screen(lg) {
+      font-size: 3.6rem;
+    }
+
+    @include abstracts.screen(md) {
+      width: auto;
+      font-size: 3rem;
+    }
+
+    &-refreshing {
+      color: #83E868;
+
+      @supports (background-clip: text) or (-webkit-background-clip: text) {
+        color: transparent;
+        background: var(--linear-primary-bg);
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+    }
+  }
+
+  &-list {
+    margin-top: 60px;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--news-item-bg);
+    transition: transform 0.4s, background-color 0.4s;
+
+    &:hover {
+      transform: translateY(-20px);
+
+      .news-item__img {
+        opacity: 0.8;
+      }
+    }
+
+    &__thumb {
+      position: relative;
+      height: 250px;
+      cursor: pointer;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    &__role {
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(54.5px);
+      color: #FFF;
+      font-size: 1.2rem;
+      font-weight: 600;
+      white-space: nowrap;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.01);
+      }
+    }
+
+    &__info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__desc {
+      margin: 50px 60px 20px;
+      color: var(--text-color-highlight);
+      line-height: 162.5%;
+      text-align: center;
+      cursor: pointer;
+
+      @include abstracts.screen(xxl) {
+        margin: 50px 35px 20px;
+      }
+    }
+
+    &__progress {
+      position: relative;
+      margin: 0 35px;
+      height: 7px;
+      border-radius: 20px;
+      background: #313538;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        height: 7px;
+        border-radius: 20px;
+      }
+    }
+
+    &__view-all {
+      margin-top: 25px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      margin-right: 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    &--1 {
+      .news-item__progress::before {
+        width: 55px;
+        background: #FF7667;
+      }
+
+      .news-item__view-all img {
+        filter: brightness(0) saturate(100%) invert(55%) sepia(46%) saturate(702%) hue-rotate(316deg) brightness(98%) contrast(109%);
+      }
+    }
+
+    &--2 {
+      .news-item__progress::before {
+        width: 100px;
+        background: #0CCE84;
+      }
+
+      .news-item__view-all img {
+        filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(666%) hue-rotate(108deg) brightness(94%) contrast(91%);
+      }
+    }
+
+    &--3 {
+      .news-item__progress::before {
+        width: 25px;
+        background: #EF8F00;
+      }
+
+      .news-item__view-all img {
+        filter: brightness(0) saturate(100%) invert(71%) sepia(45%) saturate(6301%) hue-rotate(7deg) brightness(101%) contrast(102%);
+      }
+    }
+  }
+}

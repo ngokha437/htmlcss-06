@@ -1348,8 +1348,8 @@ html.dark {
   --status-label-color: #D0D1D2;
   --member-divider: #25282B;
   --card-item-bg-active: #282C30;
-  --card-item-title: #F9F9F9;
   --media-border-btn: #36383E;
+  --news-item-bg: #282C30;
 }
 
 html {
@@ -1392,9 +1392,9 @@ html {
   --daily-task-bar-bg: #d3d3d3;
   --status-label-color: #2e2e2e;
   --member-divider: #d7d7d7;
-  --card-item-bg-active: #d3d3d3 ;
-  --card-item-title: #060606;
+  --card-item-bg-active: #d3d3d3;
   --media-border-btn: #d3d3d3;
+  --news-item-bg: #d3d3d3;
 }
 
 .sticky-header {
@@ -3958,7 +3958,7 @@ html {
 }
 .solution .card-item__title {
   display: inline-block;
-  color: var(--card-item-title);
+  color: var(--text-color-highlight);
   font-size: 2.8rem;
   font-weight: 600;
 }
@@ -4145,6 +4145,150 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 30px;
+}
+
+.news {
+  margin: 70px 0;
+}
+.news__heading {
+  width: 550px;
+  margin: 0 auto;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--text-color-highlight);
+  text-align: center;
+}
+@media (max-width: 991.98px) {
+  .news__heading {
+    font-size: 3.6rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .news__heading {
+    width: auto;
+    font-size: 3rem;
+  }
+}
+.news__heading-refreshing {
+  color: #83E868;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .news__heading-refreshing {
+    color: transparent;
+    background: var(--linear-primary-bg);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+.news-list {
+  margin-top: 60px;
+}
+.news-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--news-item-bg);
+  transition: transform 0.4s, background-color 0.4s;
+}
+.news-item:hover {
+  transform: translateY(-20px);
+}
+.news-item:hover .news-item__img {
+  opacity: 0.8;
+}
+.news-item__thumb {
+  position: relative;
+  height: 250px;
+  cursor: pointer;
+}
+.news-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.news-item__role {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(54.5px);
+  color: #FFF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.news-item__role:hover {
+  background: rgba(255, 255, 255, 0.01);
+}
+.news-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.news-item__desc {
+  margin: 50px 60px 20px;
+  color: var(--text-color-highlight);
+  line-height: 162.5%;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 1399.98px) {
+  .news-item__desc {
+    margin: 50px 35px 20px;
+  }
+}
+.news-item__progress {
+  position: relative;
+  margin: 0 35px;
+  height: 7px;
+  border-radius: 20px;
+  background: #313538;
+}
+.news-item__progress::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 7px;
+  border-radius: 20px;
+}
+.news-item__view-all {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-right: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.news-item--1 .news-item__progress::before {
+  width: 55px;
+  background: #FF7667;
+}
+.news-item--1 .news-item__view-all img {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(46%) saturate(702%) hue-rotate(316deg) brightness(98%) contrast(109%);
+}
+.news-item--2 .news-item__progress::before {
+  width: 100px;
+  background: #0CCE84;
+}
+.news-item--2 .news-item__view-all img {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(80%) saturate(666%) hue-rotate(108deg) brightness(94%) contrast(91%);
+}
+.news-item--3 .news-item__progress::before {
+  width: 25px;
+  background: #EF8F00;
+}
+.news-item--3 .news-item__view-all img {
+  filter: brightness(0) saturate(100%) invert(71%) sepia(45%) saturate(6301%) hue-rotate(7deg) brightness(101%) contrast(102%);
 }
 
 /*# sourceMappingURL=main.css.map */
