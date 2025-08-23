@@ -3,6 +3,10 @@
 .news {
   margin: 70px 0;
 
+  @include abstracts.screen(md) {
+    margin: 80px 0;
+  }
+
   &__heading {
     width: 550px;
     margin: 0 auto;
@@ -43,7 +47,7 @@
     padding: 20px;
     border-radius: 12px;
     background: var(--news-item-bg);
-    transition: transform 0.4s, background-color 0.4s;
+    transition: transform 0.4s ease, background-color 0.4s ease;
 
     &:hover {
       transform: translateY(-20px);
